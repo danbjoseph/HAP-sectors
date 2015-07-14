@@ -2,6 +2,8 @@ html, body {
 	height:429px;
 	width:763px;
 	background: #fff;
+	margin:0;
+	padding:0;
 }
 *:focus {
     outline: 0 !important;
@@ -18,13 +20,59 @@ html, body {
 }
 #map{
 	position:fixed;
-	margin-left: -2px;
 	width: 532px;
-    height: 429px;
-    display: inline-block;
-    background: #e6f4ff;
-    z-index: 1;
+  height: 429px;
+  display: inline-block;
+  background: #e6f4ff;
+  z-index: 1;
 }
+#info{
+	position: fixed;
+	width: 763px;
+	height: 429px;
+	left:0;
+	top:0;
+	z-index: 3;
+	display: inline-block;
+	background-image: url("../img/background.png");
+	background-repeat: repeat;
+	padding: 14px 24px 24px 24px;
+	display: none;
+
+}
+#info .text {
+	color: #0d0d0d;
+}
+#info-title {
+	margin: 0px;
+	margin-bottom: 5px;
+	padding: 10px;
+	font-weight: 800;
+	letter-spacing: 1px;
+	background-image: url("../img/background.png");
+	background-repeat: repeat;
+}
+#info-blurb {
+	font-weight: 500;
+	font-size: 110%;
+}
+#info-pic {
+	max-height: 330px;
+	max-width: 375px;
+	margin-right: 16px;
+	margin-bottom: 50px;
+}
+#dismiss{
+	margin: 5px;
+	color: #1a1a1a;
+	/*opacity: 0.9;*/
+	cursor: pointer;
+}
+#dismiss span{
+	font-size: 26px;
+}
+
+
 
 .btn-custom{
 	background-color: #fff;
@@ -44,6 +92,9 @@ html, body {
 .btn-custom-sector {
 	padding: 5px;
 	margin: 4px;
+	/*box-shadow: 0 1px 4px rgba(109,110,112,0.50);*/
+	box-shadow: 0 1px 4px rgba(0,0,0,0.40) !important;
+
 }
 .btn-text {
 	vertical-align: middle;
@@ -64,8 +115,8 @@ html, body {
 	display: inline-block;
 	vertical-align: middle;
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), 
-only screen and (min--moz-device-pixel-ratio: 1.5), 
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-resolution: 240dpi) {
 .btn-sector-icon {
     background-image: url(../img/sprite@2x.png);
@@ -122,21 +173,27 @@ only screen and (min-resolution: 240dpi) {
 }
 .poly-commune-hasprojects {
 	fill: #f8a9b0;
-	cursor: pointer;
+	/*cursor: pointer;*/
 }
 .poly-commune-hasprojects.active-geo {
 	fill: #ed1b2e;
 }
 .poly-other{
     stroke: #9f9fa3;
-    fill: #e3e3e3;   
+    fill: #e3e3e3;
 }
-#tooltip {                      
+.story-marker{
+	cursor: pointer;
+	fill: #ecb731;
+	stroke: #6d6e70;
+
+}
+#tooltip {
     position:fixed;
     z-index:999;
     top: 8px;
     right: 24px;
     text-align: right;
     font-size:16px;
-    color: #6d6e70;            
-}    
+    color: #6d6e70;
+}
